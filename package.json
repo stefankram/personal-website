@@ -1,0 +1,10 @@
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "description": "The personal website and blog of Stefan Kramreither",
+  "main": "index.js",
+  "repository": "https://github.com/stefankram/personal-website",
+  "author": "Stefan Kramreither <me@stefankram.com>",
+  "license": "MIT",
+  "private": true
+}
