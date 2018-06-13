@@ -2,7 +2,7 @@
   "name": "personal-website",
   "version": "1.0.0",
   "description": "The personal website and blog of Stefan Kramreither",
-  "main": "index.js",
+  "main": "src/index.js",
   "repository": "https://github.com/stefankram/personal-website",
   "author": "Stefan Kramreither <me@stefankram.com>",
   "license": "MIT",
@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "@types/react": "^16.3.17",
+    "@types/react-dom": "^16.0.6",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
@@ -27,7 +28,6 @@
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.4.0",
-    "extract-text-webpack-plugin": "^3.0.2",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.3",
@@ -40,6 +40,7 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "normalize.css": "^8.0.0",
     "prop-types": "^15.6.1",
     "react": "^16.4.0",

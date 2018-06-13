@@ -14,16 +14,18 @@ module.exports = {
       test: /(\.scss|\.css)$/,
       use: ExtractTextPlugin.extract({
         fallback: 'style-loader',
-        use: 'css-loader!sass-loader',
+        use: ['css-loader', 'sass-loader'],
       }),
     }],
   },
   plugins: [
     new HtmlPlugin({
-      template: './src/template.html',
       filename: './index.html',
+      template: './src/template.html',
     }),
-    new ExtractTextPlugin('style.css'),
+    new ExtractTextPlugin({
+      filename: './style.css',
+    }),
   ],
   resolve: {
     modules: [
