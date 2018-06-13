@@ -3,6 +3,12 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 
 module.exports = {
+  entry: './src/client/index.js',
+  output: {
+    path: path.resolve(__dirname, 'assets'),
+    filename: 'bundle.js',
+    publicPath: '/assets/',
+  },
   module: {
     rules: [{
       test: /\.js$/,
@@ -21,10 +27,10 @@ module.exports = {
   plugins: [
     new HtmlPlugin({
       filename: './index.html',
-      template: './src/template.html',
+      template: './src/client/template.html',
     }),
     new ExtractTextPlugin({
-      filename: './style.css',
+      filename: 'style.css',
     }),
   ],
   resolve: {
@@ -33,4 +39,5 @@ module.exports = {
       'node_modules',
     ],
   },
+  devtool: 'source-map',
 };
