@@ -1,8 +1,17 @@
+const http = require('http');
 const Server = require('./server');
+const { PORTS } = require('./server/config/constants');
 
-const port = process.env.PORT || 8080;
-const app = Server.app();
+const app = new Server();
+const httpServer = http.createServer(app);
 
-app.listen(port);
-
-console.log(`Listening on https://localhost:${port}`);
+httpServer.listen(PORTS.HTTP);
+httpServer.on('listening', () => {
+  console.log(`Listening on port: ${PORTS.HTTP}`);
+});
+httpServer.on('error', (err) => {
+  console.log(`Something bad happened: ${JSON.stringify(err)}`);
+});
+httpServer.on('connection', (socket) => {
+  // Perhaps perform logging?
+});

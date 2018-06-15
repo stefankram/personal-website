@@ -1,15 +1,15 @@
 const express = require('express');
-const path = require('path');
+const apiRouter = require('./api');
+const { PATHS } = require('./config/constants');
 
-module.exports = {
-  app: () => {
-    const app = express();
-    const htmlEntry = path.join(__dirname, '../../assets/index.html');
-    const publicPath = express.static(path.join(__dirname, '../../assets'));
+function Server() {
+  const app = express();
 
-    app.use('/assets', publicPath);
-    app.get('/home', (_, res) => res.sendFile(htmlEntry));
+  app.use('/assets', express.static(PATHS.ASSETS));
+  app.use('/api', apiRouter);
+  app.get('*', (_, res) => res.sendFile(PATHS.ENTRY));
 
-    return app;
-  },
-};
+  return app;
+}
+
+module.exports = Server;
