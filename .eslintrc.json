@@ -11,5 +11,8 @@
       "extensions": [".js", ".jsx"]
     }],
     "function-paren-newline": ["error", "consistent"]
+  },
+  "settings": {
+    "import/resolver": "webpack"
   }
 }
